@@ -52,12 +52,13 @@ class MAX6675(object):
         # Read in 16 bits
         for i in range(16):
             GPIO.output(self.clock_pin, GPIO.LOW)
-            time.sleep(0.001)
+            time.sleep(0.01)
             bytesin <<= 1
             if GPIO.input(self.data_pin):
                 bytesin |= 1
             GPIO.output(self.clock_pin, GPIO.HIGH)
-        time.sleep(0.001)
+            print(str(bytesin))
+        time.sleep(0.01)
 
         # Unselect the chip
         GPIO.output(self.cs_pin, GPIO.HIGH)
@@ -81,6 +82,7 @@ class MAX6675(object):
             print('did this problem None')
         # Remove bits D0-3
         tc_data = ((data_16 >> 3) & 0xFFF)
+        print('tc data = ' + tc_data)
         # 12-bit resolution
         return tc_data * 0.25
 
