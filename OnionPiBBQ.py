@@ -19,7 +19,7 @@ for i in range(0, 10, 1):
 
     print(value)
 
-    time.sleep(1)
+    time.sleep(5)
 
 url = "https://api.onion.io/v1/devices/4e1ad09c-45ec-440b-b3d6-59e811d7bcba/i2c_exp/oled-exp"
 

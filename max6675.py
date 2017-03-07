@@ -52,13 +52,13 @@ class MAX6675(object):
         # Read in 16 bits
         for i in range(16):
             GPIO.output(self.clock_pin, GPIO.LOW)
-            time.sleep(0.001)
+            time.sleep(0.1)
             bytesin <<= 1
             if GPIO.input(self.data_pin):
                 bytesin |= 1
             GPIO.output(self.clock_pin, GPIO.HIGH)
             print('Bytes in  = ' + str(bytesin))
-        time.sleep(5)
+        time.sleep(.1)
 
         # Unselect the chip
         GPIO.output(self.cs_pin, GPIO.HIGH)
