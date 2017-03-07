@@ -19,7 +19,7 @@ for i in range(0, 10, 1):
 
     print(value)
 
-    time.sleep(5)
+    time.sleep(1)
 
 # import spidev
 # import RPiSensors.max6675 as sensor_6675
