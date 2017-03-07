@@ -100,6 +100,8 @@ class MAX6675(object):
         """Selective GPIO cleanup"""
         GPIO.setup(self.cs_pin, GPIO.IN)
         GPIO.setup(self.clock_pin, GPIO.IN)
+        GPIO.cleanup()
+        print('cleaned up')
 
 
 class MAX6675Error(Exception):
@@ -119,7 +121,7 @@ if __name__ == "__main__":
     units = "c"
     thermocouple = MAX6675(cs_pin, clock_pin, data_pin, units)
     running = True
-    while (running):
+    while running:
         try:
             try:
                 tc = thermocouple.get()
