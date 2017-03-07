@@ -2,6 +2,7 @@ __author__ = 'rainsbp'
 
 import requests
 import json
+import time
 
 cs_pin = 24
 clock_pin = 23
@@ -17,6 +18,8 @@ for i in range(0, 10, 1):
     thermocouple.cleanup()
 
     print(value)
+
+    time.sleep(1)
 
 url = "https://api.onion.io/v1/devices/4e1ad09c-45ec-440b-b3d6-59e811d7bcba/i2c_exp/oled-exp"
 
