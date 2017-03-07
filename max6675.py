@@ -49,6 +49,7 @@ class MAX6675(object):
         bytesin = 0
         # Select the chip
         GPIO.output(self.cs_pin, GPIO.LOW)
+        time.sleep(0.01)
         # Read in 16 bits
         for i in range(16):
             GPIO.output(self.clock_pin, GPIO.LOW)
@@ -79,7 +80,6 @@ class MAX6675(object):
         """Takes an integer and returns a thermocouple temperature in celsius."""
         if data_16 is None:
             data_16 = self.data
-            print('did this problem None')
         # Remove bits D0-3
         tc_data = ((data_16 >> 3) & 0xFFF)
         print('tc data = ' + str(tc_data))
