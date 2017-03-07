@@ -32,8 +32,6 @@ class MAX6675(object):
         # Initialize needed GPIO
         GPIO.setmode(self.board)
 
-        self.cleanup()
-
         GPIO.setup(self.cs_pin, GPIO.OUT)
         GPIO.setup(self.clock_pin, GPIO.OUT)
         GPIO.setup(self.data_pin, GPIO.IN)
