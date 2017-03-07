@@ -10,7 +10,7 @@ data_pin = 22
 units = "c"
 value = "test"
 
-from max31855.max6675 import MAX6675, MAX6675Error
+from max6675 import MAX6675, MAX6675Error
 
 for i in range(0, 10, 1):
     thermocouple = MAX6675(cs_pin, clock_pin, data_pin, units)
