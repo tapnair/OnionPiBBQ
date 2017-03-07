@@ -10,16 +10,22 @@ data_pin = 14
 units = "c"
 value = "test"
 
-from max6675 import MAX6675, MAX6675Error
+# from max6675 import MAX6675, MAX6675Error
+#
+# for i in range(0, 10, 1):
+#     thermocouple = MAX6675(cs_pin, clock_pin, data_pin, units)
+#     value = thermocouple.get()
+#     thermocouple.cleanup()
+#
+#     print(value)
+#
+#     time.sleep(5)
 
-for i in range(0, 10, 1):
-    thermocouple = MAX6675(cs_pin, clock_pin, data_pin, units)
-    value = thermocouple.get()
-    thermocouple.cleanup()
+import spidev
+import RPiSensors.max6675 as sensor_6675
 
-    print(value)
-
-    time.sleep(5)
+sensor = sensor_6675.Max6675(0, 0)
+print sensor.temperature
 
 url = "https://api.onion.io/v1/devices/4e1ad09c-45ec-440b-b3d6-59e811d7bcba/i2c_exp/oled-exp"
 
