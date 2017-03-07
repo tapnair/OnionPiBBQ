@@ -4,9 +4,9 @@ import requests
 import json
 import time
 
-cs_pin = 24
-clock_pin = 23
-data_pin = 22
+cs_pin = 15
+clock_pin = 18
+data_pin = 14
 units = "c"
 value = "test"
 
