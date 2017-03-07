@@ -26,7 +26,8 @@ import RPiSensors.max6675 as sensor_6675
 
 for i in range(10):
     sensor = sensor_6675.Max6675(0, 0)
-    print sensor.temperature
+    value = sensor.temperature
+    print value
     time.sleep(2)
 
 url = "https://api.onion.io/v1/devices/4e1ad09c-45ec-440b-b3d6-59e811d7bcba/i2c_exp/oled-exp"
