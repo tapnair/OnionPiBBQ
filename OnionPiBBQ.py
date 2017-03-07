@@ -7,7 +7,7 @@ import time
 cs_pin = 24
 clock_pin = 23
 data_pin = 22
-units = "f"
+units = "c"
 value = "test"
 
 from max31855.max6675 import MAX6675, MAX6675Error
