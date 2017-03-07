@@ -82,7 +82,7 @@ class MAX6675(object):
             print('did this problem None')
         # Remove bits D0-3
         tc_data = ((data_16 >> 3) & 0xFFF)
-        print('tc data = ' + tc_data)
+        print('tc data = ' + str(tc_data))
         # 12-bit resolution
         return tc_data * 0.25
 
