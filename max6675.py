@@ -57,7 +57,7 @@ class MAX6675(object):
             if GPIO.input(self.data_pin):
                 bytesin |= 1
             GPIO.output(self.clock_pin, GPIO.HIGH)
-            print(str(bytesin))
+            print('Bytes in  = ' + str(bytesin))
         time.sleep(0.01)
 
         # Unselect the chip
