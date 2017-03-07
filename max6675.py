@@ -31,6 +31,9 @@ class MAX6675(object):
 
         # Initialize needed GPIO
         GPIO.setmode(self.board)
+
+        self.cleanup()
+
         GPIO.setup(self.cs_pin, GPIO.OUT)
         GPIO.setup(self.clock_pin, GPIO.OUT)
         GPIO.setup(self.data_pin, GPIO.IN)
@@ -101,7 +104,7 @@ class MAX6675(object):
         """Selective GPIO cleanup"""
         GPIO.setup(self.cs_pin, GPIO.IN)
         GPIO.setup(self.clock_pin, GPIO.IN)
-        GPIO.cleanup()
+        # GPIO.cleanup()
         print('cleaned up')
 
 
